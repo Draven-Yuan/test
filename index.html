@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content=.a/html; charset=utf-8"/>  
+    <title></title>  
+    <script src="js/jq.min.js"></script>
+</head>  
+<body>
+  
+    <button>按钮</button><br/>  
+    <div class="a" style="width:100px;height:50px;"></div>
+    <p>按键次数：<span></span></p>
+</body>  
+</html>
+<script>
+$(document).ready(function () {
+	var timeinter;
+	i=0;
+	$(".a").css("background-color", "#000");  
+    $(".a").mousedown(function () {
+       	$('span').text(i);
+        $(".a").css("background-color", "#ff9900");
+        clearInterval(timeinter);  
+        timeinter= setInterval(function(){
+        	i+=1;
+        	$('span').text(i);
+        },200);  
+    });
+  
+    $(".a").mouseup(function () {
+        $(".a").css("background-color", "#000");
+        clearInterval(timeinter);
+    });
+}); 
+</script> 
